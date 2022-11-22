@@ -19,7 +19,7 @@ namespace Nyxellnt.Models
             this.eventoComprado = eventoComprado;
             this.numEntradasCompradas = numEntradasCompradas;
             this.precioTotal = numEntradasCompradas * eventoComprado.precioEntrada;
-            this.fechaCompra = new DateTime.Now();
+            //this.fechaCompra = new DateTime.Now();
         }
 
         public void mostrarOperacion(){
