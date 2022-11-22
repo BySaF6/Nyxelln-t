@@ -13,9 +13,10 @@ namespace Nyxellnt.Models
         public DateTime fecha;
         public decimal precioEntrada;
         public int stock;
+        public string categoria;
 
         //Constructor
-        public Evento(int idEvento, string nombre, string cantante, string descripcion, string localidad, DateTime fecha, decimal precioEntrada, int stock)
+        public Evento(int idEvento, string nombre, string cantante, string descripcion, string localidad, DateTime fecha, decimal precioEntrada, int stock, string categoria)
         {
             this.idEvento = eventNumber.ToString();
             eventNumber++;
@@ -26,10 +27,11 @@ namespace Nyxellnt.Models
             this.fecha = fecha;
             this.precioEntrada = precioEntrada;
             this.stock = stock;
+            this.categoria = categoria;
         }
 
         public void listarEventoLinea(){
-            Console.WriteLine(idEvento+" "+nombre + " " + cantante + " "+localidad+" "+precioEntrada);
+            Console.WriteLine(idEvento+" "+nombre + " " + cantante + " "+localidad+" "+categoria+" "+precioEntrada);
         }
 
         public void listarEventoExtendido(){
@@ -37,6 +39,7 @@ namespace Nyxellnt.Models
             Console.WriteLine(cantante);
             Console.WriteLine(descripcion);
             Console.WriteLine(localidad);
+            Console.WriteLine(categoria);
             Console.WriteLine(fecha);
             Console.WriteLine(precioEntrada);
             Console.WriteLine(stock);
