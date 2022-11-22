@@ -1,6 +1,6 @@
 using System;
 
-namespace Nexyll.Models
+namespace Nyxellnt.Models
 {
     class Operacion
     {
