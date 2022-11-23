@@ -169,9 +169,6 @@ namespace Nyxellnt
 
         static Usuario user = null;
         public static List<Usuario> usuarios = new List<Usuario>();
-        //Deserializar
-        // public static List<Usuario>? usuarios = JsonConvert.DeserializeObject<List<Usuario>>("usuarios.json");
-        // usuarios.ForEach(e => Console.WriteLine(e));
         public static void registrarse()
         {
             Console.WriteLine("Nombre: ");
@@ -185,28 +182,34 @@ namespace Nyxellnt
             Console.WriteLine("Cuenta creada con exito.");
             user = new Usuario(nombre, apellido, email, password);
 
+            //Deserializar
+            usuarios = JsonConvert.DeserializeObject<List<Usuario>>(File.ReadAllText("./Models/Json/usuarios.json"));
+            usuarios.ForEach(e => Console.WriteLine(e));
+
             //Serializar listaUsuarios
             usuarios.Add(user);
-            string fileName = "usuarios.json";
+            string fileName = "./Models/Json/usuarios.json";
             string jsonString = System.Text.Json.JsonSerializer.Serialize(usuarios, new JsonSerializerOptions());
-            File.WriteAllText(fileName, jsonString);
+            File.WriteAllText(fileName, jsonString); 
         }
 
-        public static void iniciarSesion()
+    public static void iniciarSesion()
+    {
+        Console.WriteLine("Email: ");
+        String email = Console.ReadLine();
+        Console.WriteLine("Constraseña: ");
+        String password = Console.ReadLine();
+
+        usuarios.ForEach(usuario =>
         {
-            Console.WriteLine("Email: ");
-            String email = Console.ReadLine();
-            Console.WriteLine("Constraseña: ");
-            String password = Console.ReadLine();
-
-            usuarios.ForEach(usuario =>{
-                if(usuario.email.Equals(email) && usuario.password.Equals(password)){
-                    user = usuario;
-                    Console.WriteLine("gucci");
-                }
-            });
-        }
-
-        
+            if (usuario.email.Equals(email) && usuario.password.Equals(password))
+            {
+                user = usuario;
+                Console.WriteLine("gucci");
+            }
+        });
     }
+
+
+}
 }
