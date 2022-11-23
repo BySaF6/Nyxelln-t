@@ -7,33 +7,20 @@ namespace Nyxellnt.Models
         public string idUsuario;
         public static int accountNumber = 1;
         public string nombre;
+        public string apellido;
         public string email;
-        public string password;
-        public string localidad;
-        public string cuentaBancaria;
-        public List<Evento> eventosComprados = new List<Evento>();
+        private string password {get;set;}
+        public List<Operacion> eventosComprados = new List<Operacion>();
 
         //Constructor
-        public Usuario(string email, string nombre, string password, string localidad, string cuentaBancaria)
+        public Usuario(string nombre, string apellido, string email, string password)
         {
             this.idUsuario = accountNumber.ToString();
             accountNumber++;
-            this.email = email;
             this.nombre = nombre;
+            this.apellido = apellido;
+            this.email = email;
             this.password = password;
-            this.localidad = localidad;
-            this.cuentaBancaria = cuentaBancaria;
-        }
-
-        public void crearUsuario (){
-            
-        }
-        public void comprarEntrada(Evento evento){
-            // int numEntradas = 0;
-
-
-            // Operacion operacion = new Operacion();
-            // eventosComprados.add();
         }
     }
 }
