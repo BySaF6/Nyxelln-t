@@ -49,69 +49,7 @@ namespace Nyxellnt
                             Console.WriteLine("De momento no pongas nada");
                             break;
                     }
-
-
-                    //             if(userAccessed){
-                    //                 int opcion2 = 0;
-                    //                 while(opcion2 != 3){
-                    //                     Console.WriteLine("\n---------- Usuario "+user.nombre+" ----------");
-                    //                     Console.WriteLine("1. Ver eventos comprados");
-                    //                     Console.WriteLine("2. Lista de eventos");
-                    //                     Console.WriteLine("3. Cerrar sesión");
-                    //                     Console.WriteLine("------------------------------\n");
-                    //                     opcion2 = pedirOpcion(1,3);
-
-                    //                     switch(opcion2){
-                    //                         case 1:
-                    //                             break;
-                    //                         case 2:
-                    //                             int opcion3 = 0;
-                    //                             while(opcion3 != listaEventos.length+1){
-                    //                                 Console.WriteLine("\n---------- Lista de eventos ----------");
-                    //                                 Console.WriteLine("1. Evento 1");
-                    //                                 Console.WriteLine("2. Evento 2");
-                    //                                 //
-                    //                                 for(int i=0; i<listaEventos.length; i++){
-                    //                                     listaEventos[i].listarEventoLinea();
-                    //                                 }
-                    //                                 //
-                    //                                 Console.WriteLine("n. Atrás");
-                    //                                 Console.WriteLine("-------------------------------------\n");
-                    //                                 opcion3 = pedirOpcion(1,listaEventos.length+1);
-
-                    //                                 if(opcion3 >= 1 && opcion3 <= listaEventos.length){
-                    //                                     Console.WriteLine("\n--------- "+listaEventos[opcion3-1].nombre+" ---------");
-                    //                                     listaEventos[opcion3-1].listarEventoExtendido();
-                    //                                     Console.WriteLine("-------------------------------------");
-                    //                                     Console.WriteLine("1. Comprar Evento");
-                    //                                     Console.WriteLine("2. Atrás");
-                    //                                     Console.WriteLine("-------------------------------------\n");
-
-                    //                                 }
-                    //                             }
-                    //                             break;
-                    //                         case 3:
-                    //                             Console.WriteLine("¡Hasta luego!\n");
-                    //                             exit = true;
-                    //                             break;
-                    //                         default:
-                    //                             Console.WriteLine("Elige una opción del 1 al 4");
-                    //                             break;
-                    //                     }
-
-
-                    //                 }
-                    //             }
                 }
-
-
-
-
-
-
-
-
-
 
 
             }
@@ -229,7 +167,8 @@ namespace Nyxellnt
                     Console.WriteLine("Sesión iniciada con éxito");
                 }
             });
-            if(user == null){
+            if (user == null)
+            {
                 Console.WriteLine("No estas registrado");
             }
         }
@@ -257,7 +196,7 @@ namespace Nyxellnt
                         registrarse();
                         break;
                     case 3:
-                        verEventos();
+                        misCompras();
                         break;
                     case 4:
                         Console.WriteLine("De momento no pongas nada");
@@ -322,7 +261,7 @@ namespace Nyxellnt
                         string jsonStringEventos = System.Text.Json.JsonSerializer.Serialize(listaEventos, options);
                         File.WriteAllText("./Models/Json/usuarios.json", jsonStringUsuarios);
                         File.WriteAllText("./Models/Json/evento.json", jsonStringEventos);
-                        
+
                         Console.WriteLine("Entrada comprada");
                     }
                 }
@@ -331,10 +270,23 @@ namespace Nyxellnt
                     Console.WriteLine("Inicia sesión para poder comprar entradas");
                 }
             }
-
         }
 
-
+        public static void misCompras()
+        {
+            int opcion = 0;
+            while (opcion != user.eventosComprados.Count + 1)
+            {
+                Console.WriteLine("-------------- Nyxelln't - Mis Compras --------------");
+                user.eventosComprados.ForEach(e =>
+                            {
+                                e.mostrarOperacion();
+                            });
+                Console.WriteLine(user.eventosComprados.Count + 1 + ". Volver");
+                Console.WriteLine("----------------------------------");
+                opcion = int.Parse(Console.ReadLine());
+            }
+        }
 
     }
 }
