@@ -40,6 +40,7 @@ namespace Nyxellnt
                             break;
                         case 2:
                             registrarse();
+                            menuUsuario();
                             break;
                         case 3:
                             verEventos();
@@ -227,11 +228,10 @@ namespace Nyxellnt
                     user = usuario;
                     Console.WriteLine("Sesión iniciada con éxito");
                 }
-                else
-                {
-                    Console.WriteLine("No estas registrado");
-                }
             });
+            if(user == null){
+                Console.WriteLine("No estas registrado");
+            }
         }
 
         public static void menuUsuario()
@@ -270,14 +270,14 @@ namespace Nyxellnt
         public static void verEventos()
         {
             int opcion = 0;
-            while (opcion != listaEventos.Count+1)
+            while (opcion != listaEventos.Count + 1)
             {
                 Console.WriteLine("-------------- Nyxelln't - Ver Eventos --------------");
                 listaEventos.ForEach(e =>
                             {
                                 e.listarEventoLinea();
                             });
-                Console.WriteLine(listaEventos.Count+1+". Volver");
+                Console.WriteLine(listaEventos.Count + 1 + ". Volver");
                 Console.WriteLine("----------------------------------");
                 opcion = int.Parse(Console.ReadLine());
 
@@ -303,6 +303,33 @@ namespace Nyxellnt
                 Console.WriteLine("2. Volver");
                 Console.WriteLine("----------------------------------");
                 opcion = int.Parse(Console.ReadLine());
+                if (opcion.Equals(1) && user != null)
+                {
+                    Console.WriteLine("¿Cuantas entradas quieres?: ");
+                    int entradas = int.Parse(Console.ReadLine());
+                    if (entradas > evento.stock)
+                    {
+                        Console.WriteLine("No puedes comprar tantas entradas");
+                    }
+                    else
+                    {
+                        evento.stock -= entradas;
+                        Operacion operacion = new Operacion(evento, entradas);
+                        user.eventosComprados.Add(operacion);
+
+                        var options = new JsonSerializerOptions { WriteIndented = true };
+                        string jsonStringUsuarios = System.Text.Json.JsonSerializer.Serialize(usuarios, options);
+                        string jsonStringEventos = System.Text.Json.JsonSerializer.Serialize(listaEventos, options);
+                        File.WriteAllText("./Models/Json/usuarios.json", jsonStringUsuarios);
+                        File.WriteAllText("./Models/Json/evento.json", jsonStringEventos);
+                        
+                        Console.WriteLine("Entrada comprada");
+                    }
+                }
+                else if (user == null)
+                {
+                    Console.WriteLine("Inicia sesión para poder comprar entradas");
+                }
             }
 
         }

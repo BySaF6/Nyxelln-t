@@ -1,16 +1,180 @@
 [
   {
-    "idUsuario": "1",
+    "idUsuario": 1,
     "nombre": "asd",
     "apellido": "asd",
     "email": "asd",
-    "password": "asd"
+    "password": "asd",
+    "eventosComprados": [
+      {
+        "idOperacion": 1,
+        "eventoComprado": {
+          "idEvento": 1,
+          "nombre": "evento_1",
+          "cantante": "juanito",
+          "descripcion": "loremimpsundolorjahdskjfhsak",
+          "localidad": "zaragoza",
+          "fecha": "2022-12-25",
+          "precioEntrada": 50,
+          "stock": 86,
+          "categoria": "rock"
+        },
+        "numEntradasCompradas": 4,
+        "precioTotal": 200,
+        "fechaCompra": "0001-01-01T00:00:00"
+      },
+      {
+        "idOperacion": 1,
+        "eventoComprado": {
+          "idEvento": 1,
+          "nombre": "evento_1",
+          "cantante": "juanito",
+          "descripcion": "loremimpsundolorjahdskjfhsak",
+          "localidad": "zaragoza",
+          "fecha": "2022-12-25",
+          "precioEntrada": 50,
+          "stock": 86,
+          "categoria": "rock"
+        },
+        "numEntradasCompradas": 4,
+        "precioTotal": 200,
+        "fechaCompra": "0001-01-01T00:00:00"
+      },
+      {
+        "idOperacion": 7,
+        "eventoComprado": {
+          "idEvento": 1,
+          "nombre": "evento_1",
+          "cantante": "juanito",
+          "descripcion": "loremimpsundolorjahdskjfhsak",
+          "localidad": "zaragoza",
+          "fecha": "2022-12-25",
+          "precioEntrada": 50,
+          "stock": 64,
+          "categoria": "rock"
+        },
+        "numEntradasCompradas": 1,
+        "precioTotal": 50,
+        "fechaCompra": "0001-01-01T00:00:00"
+      }
+    ]
   },
   {
-    "idUsuario": "2",
+    "idUsuario": 2,
     "nombre": "qwe",
     "apellido": "qwe",
     "email": "qwe",
-    "password": "qwe"
+    "password": "qwe",
+    "eventosComprados": [
+      {
+        "idOperacion": 3,
+        "eventoComprado": {
+          "idEvento": 1,
+          "nombre": "evento_1",
+          "cantante": "juanito",
+          "descripcion": "loremimpsundolorjahdskjfhsak",
+          "localidad": "zaragoza",
+          "fecha": "2022-12-25",
+          "precioEntrada": 50,
+          "stock": 64,
+          "categoria": "rock"
+        },
+        "numEntradasCompradas": 6,
+        "precioTotal": 300,
+        "fechaCompra": "0001-01-01T00:00:00"
+      },
+      {
+        "idOperacion": 4,
+        "eventoComprado": {
+          "idEvento": 1,
+          "nombre": "evento_1",
+          "cantante": "juanito",
+          "descripcion": "loremimpsundolorjahdskjfhsak",
+          "localidad": "zaragoza",
+          "fecha": "2022-12-25",
+          "precioEntrada": 50,
+          "stock": 64,
+          "categoria": "rock"
+        },
+        "numEntradasCompradas": 10,
+        "precioTotal": 500,
+        "fechaCompra": "0001-01-01T00:00:00"
+      }
+    ]
+  },
+  {
+    "idUsuario": 3,
+    "nombre": "zxc",
+    "apellido": "zxc",
+    "email": "zxc",
+    "password": "zxc",
+    "eventosComprados": []
+  },
+  {
+    "idUsuario": 4,
+    "nombre": "rty",
+    "apellido": "rty",
+    "email": "rty",
+    "password": "rty",
+    "eventosComprados": [
+      {
+        "idOperacion": 5,
+        "eventoComprado": {
+          "idEvento": 1,
+          "nombre": "evento_1",
+          "cantante": "juanito",
+          "descripcion": "loremimpsundolorjahdskjfhsak",
+          "localidad": "zaragoza",
+          "fecha": "2022-12-25",
+          "precioEntrada": 50,
+          "stock": 64,
+          "categoria": "rock"
+        },
+        "numEntradasCompradas": 5,
+        "precioTotal": 250,
+        "fechaCompra": "0001-01-01T00:00:00"
+      },
+      {
+        "idOperacion": 6,
+        "eventoComprado": {
+          "idEvento": 4,
+          "nombre": "evento_4",
+          "cantante": "to\u00F1o",
+          "descripcion": "loremimpsundolorjahdskjfhsak",
+          "localidad": "pamplona",
+          "fecha": "2022-12-25",
+          "precioEntrada": 50,
+          "stock": 99,
+          "categoria": "perreo"
+        },
+        "numEntradasCompradas": 1,
+        "precioTotal": 50,
+        "fechaCompra": "0001-01-01T00:00:00"
+      }
+    ]
+  },
+  {
+    "idUsuario": 5,
+    "nombre": "qqq",
+    "apellido": "qqq",
+    "email": "qqq",
+    "password": "qqq",
+    "eventosComprados": []
+  },
+  {
+    "idUsuario": 6,
+    "nombre": "w",
+    "apellido": "w",
+    "email": "w",
+    "password": "w",
+    "eventosComprados": []
+  },
+  {
+    "idUsuario": 7,
+    "nombre": "a",
+    "apellido": "a",
+    "email": "a",
+    "password": "a",
+    "eventosComprados": []
   }
 ]

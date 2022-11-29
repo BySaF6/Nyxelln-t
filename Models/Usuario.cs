@@ -4,23 +4,24 @@ namespace Nyxellnt.Models
 {
     class Usuario
     {
-        public string idUsuario {get;set;}
+        public int idUsuario {get;set;}
         public static int accountNumber = 1;
         public string nombre {get;set;}
         public string apellido {get;set;}
         public string email {get;set;}
         public string password {get;set;}
-        public List<Operacion> eventosComprados = new List<Operacion>();
+        public List<Operacion> eventosComprados {get;set;}
 
         //Constructor
         public Usuario(string nombre, string apellido, string email, string password)
         {
-            this.idUsuario = accountNumber.ToString();
+            this.idUsuario = accountNumber;
             accountNumber++;
             this.nombre = nombre;
             this.apellido = apellido;
             this.email = email;
             this.password = password;
+            this.eventosComprados = new List<Operacion>();
         }
     }
 }

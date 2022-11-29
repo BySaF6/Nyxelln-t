@@ -4,17 +4,17 @@ namespace Nyxellnt.Models
 {
     class Operacion
     {
-        public string idOperacion;
+        public int idOperacion {get;set;}
         public static int operationNumber = 1;
-        public Evento eventoComprado;
-        public int numEntradasCompradas;
-        public decimal precioTotal;
-        public DateTime fechaCompra;
+        public Evento eventoComprado {get;set;}
+        public int numEntradasCompradas {get;set;}
+        public decimal precioTotal {get;set;}
+        public DateTime fechaCompra {get;set;}
 
         //Constructor
         public Operacion(Evento eventoComprado, int numEntradasCompradas)
         {
-            this.idOperacion = operationNumber.ToString();
+            this.idOperacion = operationNumber;
             operationNumber++;
             this.eventoComprado = eventoComprado;
             this.numEntradasCompradas = numEntradasCompradas;

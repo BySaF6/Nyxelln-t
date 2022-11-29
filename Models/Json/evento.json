@@ -7,10 +7,9 @@
     "localidad": "zaragoza",
     "fecha": "2022-12-25",
     "precioEntrada": 50,
-    "stock": 100,
+    "stock": 64,
     "categoria": "rock"
   },
-
   {
     "idEvento": 2,
     "nombre": "evento_2",
@@ -22,11 +21,10 @@
     "stock": 100,
     "categoria": "pop"
   },
-
   {
     "idEvento": 3,
     "nombre": "evento_3",
-    "cantante": "toño",
+    "cantante": "to\u00F1o",
     "descripcion": "loremimpsundolorjahdskjfhsak",
     "localidad": "pamplona",
     "fecha": "2022-12-25",
@@ -34,16 +32,15 @@
     "stock": 100,
     "categoria": "perreo"
   },
-
   {
     "idEvento": 4,
     "nombre": "evento_4",
-    "cantante": "toño",
+    "cantante": "to\u00F1o",
     "descripcion": "loremimpsundolorjahdskjfhsak",
     "localidad": "pamplona",
     "fecha": "2022-12-25",
     "precioEntrada": 50,
-    "stock": 100,
+    "stock": 99,
     "categoria": "perreo"
   }
 ]

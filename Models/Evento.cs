@@ -4,15 +4,15 @@ namespace Nyxellnt.Models
 {
     class Evento
     {
-        public int idEvento;
-        public string nombre;
-        public string cantante;
-        public string descripcion;
-        public string localidad;
-        public string fecha;
-        public decimal precioEntrada;
-        public int stock;
-        public string categoria;
+        public int idEvento {get;set;}
+        public string nombre {get;set;}
+        public string cantante {get;set;}
+        public string descripcion {get;set;}
+        public string localidad {get;set;}
+        public string fecha {get;set;}
+        public decimal precioEntrada {get;set;}
+        public int stock {get;set;}
+        public string categoria {get;set;}
 
         //Constructor
         public Evento(int idEvento, string nombre, string cantante, string descripcion, string localidad, string fecha, decimal precioEntrada, int stock, string categoria)
