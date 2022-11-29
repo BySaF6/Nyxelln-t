@@ -15,6 +15,7 @@ namespace Nyxellnt
     {
         static void Main(string[] args)
         {
+            cargarJsonInicial();
             registrarse();
             iniciarSesion();
             //     Console.WriteLine("Bienvenido a Nyxelln't");
@@ -167,8 +168,16 @@ namespace Nyxellnt
 
         }
 
+        public static List<Evento> listaEventos = new List<Evento>();
         static Usuario user = null;
         public static List<Usuario> usuarios = new List<Usuario>();
+        public static void cargarJsonInicial()
+        {
+            listaEventos = JsonConvert.DeserializeObject<List<Evento>>(File.ReadAllText("./Models/Json/evento.json"));
+            listaEventos[0].listarEventoLinea();
+            usuarios = JsonConvert.DeserializeObject<List<Usuario>>(File.ReadAllText("./Models/Json/usuarios.json"));
+            usuarios.ForEach(e => Console.WriteLine(e));
+        }
         public static void registrarse()
         {
             Console.WriteLine("Nombre: ");
@@ -176,40 +185,58 @@ namespace Nyxellnt
             Console.WriteLine("Apellido: ");
             String apellido = Console.ReadLine();
             Console.WriteLine("Email: ");
-            String email = Console.ReadLine();
+
+            // comprobar que no haya otro email igual
+            Boolean usuarioRepetido = false;
+            String email = "";
+            do
+            {
+                usuarioRepetido = false;
+                email = Console.ReadLine();
+                usuarios.ForEach(item =>
+                {
+                    if (item.email.Equals(email))
+                    {
+                        usuarioRepetido = true;
+                        Console.WriteLine("Ese email ya esta registrado, vuelva a escribirlo");
+                    }
+                });
+            } while (usuarioRepetido == true);
+
             Console.WriteLine("Constraseña: ");
             String password = Console.ReadLine();
             Console.WriteLine("Cuenta creada con exito.");
             user = new Usuario(nombre, apellido, email, password);
 
             //Deserializar
-            usuarios = JsonConvert.DeserializeObject<List<Usuario>>(File.ReadAllText("./Models/Json/usuarios.json"));
-            usuarios.ForEach(e => Console.WriteLine(e));
+            // usuarios = JsonConvert.DeserializeObject<List<Usuario>>(File.ReadAllText("./Models/Json/usuarios.json"));
+            // usuarios.ForEach(e => Console.WriteLine(e));
 
             //Serializar listaUsuarios
             usuarios.Add(user);
             string fileName = "./Models/Json/usuarios.json";
-            string jsonString = System.Text.Json.JsonSerializer.Serialize(usuarios, new JsonSerializerOptions());
-            File.WriteAllText(fileName, jsonString); 
+            var options = new JsonSerializerOptions { WriteIndented = true };
+            string jsonString = System.Text.Json.JsonSerializer.Serialize(usuarios, options);
+            File.WriteAllText(fileName, jsonString);
         }
 
-    public static void iniciarSesion()
-    {
-        Console.WriteLine("Email: ");
-        String email = Console.ReadLine();
-        Console.WriteLine("Constraseña: ");
-        String password = Console.ReadLine();
-
-        usuarios.ForEach(usuario =>
+        public static void iniciarSesion()
         {
-            if (usuario.email.Equals(email) && usuario.password.Equals(password))
+            Console.WriteLine("Email: ");
+            String email = Console.ReadLine();
+            Console.WriteLine("Constraseña: ");
+            String password = Console.ReadLine();
+
+            usuarios.ForEach(usuario =>
             {
-                user = usuario;
-                Console.WriteLine("gucci");
-            }
-        });
+                if (usuario.email.Equals(email) && usuario.password.Equals(password))
+                {
+                    user = usuario;
+                    Console.WriteLine("gucci");
+                }
+            });
+        }
+
+
     }
-
-
-}
 }
