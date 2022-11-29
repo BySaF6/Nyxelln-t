@@ -1,6 +1,7 @@
 [
   {
-    "nombre": "evento 1",
+    "idEvento": 1,
+    "nombre": "evento_1",
     "cantante": "juanito",
     "descripcion": "loremimpsundolorjahdskjfhsak",
     "localidad": "zaragoza",
@@ -11,7 +12,8 @@
   },
 
   {
-    "nombre": "evento 2",
+    "idEvento": 2,
+    "nombre": "evento_2",
     "cantante": "pepe",
     "descripcion": "loremimpsundolorjahdskjfhsak",
     "localidad": "madrid",
@@ -22,7 +24,20 @@
   },
 
   {
-    "nombre": "evento 3",
+    "idEvento": 3,
+    "nombre": "evento_3",
+    "cantante": "toño",
+    "descripcion": "loremimpsundolorjahdskjfhsak",
+    "localidad": "pamplona",
+    "fecha": "2022-12-25",
+    "precioEntrada": 50,
+    "stock": 100,
+    "categoria": "perreo"
+  },
+
+  {
+    "idEvento": 4,
+    "nombre": "evento_4",
     "cantante": "toño",
     "descripcion": "loremimpsundolorjahdskjfhsak",
     "localidad": "pamplona",
