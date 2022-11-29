@@ -174,9 +174,7 @@ namespace Nyxellnt
         public static void cargarJsonInicial()
         {
             listaEventos = JsonConvert.DeserializeObject<List<Evento>>(File.ReadAllText("./Models/Json/evento.json"));
-            listaEventos[0].listarEventoLinea();
             usuarios = JsonConvert.DeserializeObject<List<Usuario>>(File.ReadAllText("./Models/Json/usuarios.json"));
-            usuarios.ForEach(e => Console.WriteLine(e));
         }
         public static void registrarse()
         {
@@ -207,10 +205,6 @@ namespace Nyxellnt
             String password = Console.ReadLine();
             Console.WriteLine("Cuenta creada con exito.");
             user = new Usuario(nombre, apellido, email, password);
-
-            //Deserializar
-            // usuarios = JsonConvert.DeserializeObject<List<Usuario>>(File.ReadAllText("./Models/Json/usuarios.json"));
-            // usuarios.ForEach(e => Console.WriteLine(e));
 
             //Serializar listaUsuarios
             usuarios.Add(user);
