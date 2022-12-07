@@ -7,7 +7,7 @@
     "localidad": "zaragoza",
     "fecha": "2022-12-25",
     "precioEntrada": 50,
-    "stock": 64,
+    "stock": 63,
     "categoria": "rock"
   },
   {
@@ -18,7 +18,7 @@
     "localidad": "madrid",
     "fecha": "2022-12-25",
     "precioEntrada": 50,
-    "stock": 100,
+    "stock": 99,
     "categoria": "pop"
   },
   {

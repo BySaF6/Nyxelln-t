@@ -23,7 +23,7 @@ namespace Nyxellnt.Models
         }
 
         public void mostrarOperacion(){
-            Console.WriteLine(idOperacion+" "+eventoComprado.nombre+" "+eventoComprado.cantante+" "+eventoComprado.localidad+" "+eventoComprado.categoria+" "+eventoComprado.fecha+" "+numEntradasCompradas+" "+precioTotal+" "+fechaCompra);
+            Console.WriteLine(eventoComprado.nombre+" "+eventoComprado.cantante+" "+eventoComprado.localidad+" "+eventoComprado.categoria+" "+eventoComprado.fecha+" "+numEntradasCompradas+" "+precioTotal+" "+fechaCompra);
         }
     }
 }

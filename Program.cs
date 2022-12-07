@@ -30,8 +30,8 @@ namespace Nyxellnt
                     Console.WriteLine("3. Ver Eventos");
                     Console.WriteLine("4. Salir");
                     Console.WriteLine("----------------------------------");
-                    // opcion1 = pedirOpcion(1, 4);
-                    opcion1 = int.Parse(Console.ReadLine());
+                    opcion1 = pedirOpcion();
+                    // opcion1 = int.Parse(Console.ReadLine());
                     switch (opcion1)
                     {
                         case 1:
@@ -46,7 +46,7 @@ namespace Nyxellnt
                             verEventos();
                             break;
                         case 4:
-                            Console.WriteLine("De momento no pongas nada");
+                            Console.WriteLine("Hasta el huevo, vuelve pronto");
                             break;
                     }
                 }
@@ -82,18 +82,34 @@ namespace Nyxellnt
             usuarios = JsonConvert.DeserializeObject<List<Usuario>>(File.ReadAllText("./Models/Json/usuarios.json"));
         }
 
-        // static Boolean isNumeric(String cadena)
-        // {
-        //     try
-        //     {
-        //         Convert.ToInt32(cadena);
-        //         return true;
-        //     }
-        //     catch (Exception nfe)
-        //     {
-        //         return false;
-        //     }
-        // }
+        static Boolean isNumeric(String cadena)
+        {
+            try
+            {
+                Convert.ToInt32(cadena);
+                return true;
+            }
+            catch (Exception nfe)
+            {
+                return false;
+            }
+        }
+        static int pedirOpcion()
+        {
+            int opcion = 0;
+            String opcionString;
+            Boolean datoValido = false;
+            while (datoValido == false)
+            {
+                opcionString = Console.ReadLine();
+                if (isNumeric(opcionString) == true)
+                {
+                    opcion = Convert.ToInt32(opcionString);
+                    datoValido = true;
+                }
+            }
+            return opcion;
+        }
         // static int pedirOpcion(int limitMin, int limitMax)
         // {
         //     int opcion = 0;
@@ -185,25 +201,40 @@ namespace Nyxellnt
                 Console.WriteLine("3. Mis Compras");
                 Console.WriteLine("4. Cerrar sesión");
                 Console.WriteLine("----------------------------------");
-                // opcion1 = pedirOpcion(1, 4);
-                opcion = int.Parse(Console.ReadLine());
+                opcion = pedirOpcion();
+                // opcion = int.Parse(Console.ReadLine());
                 switch (opcion)
                 {
                     case 1:
                         verEventos();
                         break;
                     case 2:
-                        registrarse();
+                        listarInformacionUsuario();
                         break;
                     case 3:
                         misCompras();
                         break;
                     case 4:
-                        Console.WriteLine("De momento no pongas nada");
+                        Console.WriteLine("Tira coo!");
+                        user = null;
                         break;
                 }
             }
 
+        }
+
+        public static void listarInformacionUsuario()
+        {
+            int opcion = 0;
+            while (opcion != 1)
+            {
+                Console.WriteLine("-------------- Nyxelln't - Mi Cuenta --------------");
+                user.listarInformacionUsuario();
+                Console.WriteLine("1. Volver");
+                Console.WriteLine("----------------------------------");
+                opcion = pedirOpcion();
+                // opcion = int.Parse(Console.ReadLine());
+            }
         }
 
         public static void verEventos()
@@ -212,14 +243,54 @@ namespace Nyxellnt
             while (opcion != listaEventos.Count + 1)
             {
                 Console.WriteLine("-------------- Nyxelln't - Ver Eventos --------------");
+                Console.WriteLine("0. Buscar por género musical");
                 listaEventos.ForEach(e =>
                             {
                                 e.listarEventoLinea();
                             });
                 Console.WriteLine(listaEventos.Count + 1 + ". Volver");
                 Console.WriteLine("----------------------------------");
-                opcion = int.Parse(Console.ReadLine());
+                opcion = pedirOpcion();
+                // opcion = int.Parse(Console.ReadLine());
 
+                if (opcion == 0)
+                {
+                    buscador();
+                }
+                listaEventos.ForEach(e =>
+                {
+                    if (e.idEvento.Equals(opcion))
+                    {
+                        verEventoExtendido(e);
+                    }
+                });
+            }
+        }
+
+        public static void buscador()
+        {
+            Console.WriteLine("-------------- Nyxelln't - Buscador de Eventos --------------");
+            Console.WriteLine("Opciones disponibles: pop, rock, perreo");
+            Console.WriteLine("Introduzca género:");
+            string stringBusqueda = Console.ReadLine();
+            verEventosBuscados(stringBusqueda);
+        }
+
+        public static void verEventosBuscados(string stringBusqueda)
+        {
+            int opcion = 1;
+            while (opcion != 0)
+            {
+                Console.WriteLine("-------------- Nyxelln't - Eventos de " + stringBusqueda + " --------------");
+                listaEventos.ForEach(e =>
+                {
+                    if (e.categoria.Equals(stringBusqueda))
+                    {
+                        e.listarEventoLinea();
+                    }
+                });
+                Console.WriteLine("0. Volver");
+                opcion = pedirOpcion();
                 listaEventos.ForEach(e =>
                 {
                     if (e.idEvento.Equals(opcion))
@@ -241,14 +312,17 @@ namespace Nyxellnt
                 Console.WriteLine("1. Comprar");
                 Console.WriteLine("2. Volver");
                 Console.WriteLine("----------------------------------");
-                opcion = int.Parse(Console.ReadLine());
+                opcion = pedirOpcion();
                 if (opcion.Equals(1) && user != null)
                 {
                     Console.WriteLine("¿Cuantas entradas quieres?: ");
-                    int entradas = int.Parse(Console.ReadLine());
-                    if (entradas > evento.stock)
+                    int entradas = pedirOpcion();
+                    if (entradas < 1)
                     {
-                        Console.WriteLine("No puedes comprar tantas entradas");
+                        Console.WriteLine("No seas catalán y compra una entrada");
+                    }
+                    else if(entradas > evento.stock){
+                        Console.WriteLine("¡Onde vas macarenooo! Compra alguna menos, que tas pasao");
                     }
                     else
                     {
@@ -275,16 +349,17 @@ namespace Nyxellnt
         public static void misCompras()
         {
             int opcion = 0;
-            while (opcion != user.eventosComprados.Count + 1)
+            while (opcion != 1)
             {
                 Console.WriteLine("-------------- Nyxelln't - Mis Compras --------------");
                 user.eventosComprados.ForEach(e =>
                             {
                                 e.mostrarOperacion();
                             });
-                Console.WriteLine(user.eventosComprados.Count + 1 + ". Volver");
+                Console.WriteLine("1. Volver");
                 Console.WriteLine("----------------------------------");
-                opcion = int.Parse(Console.ReadLine());
+                opcion = pedirOpcion();
+                // opcion = int.Parse(Console.ReadLine());
             }
         }
 

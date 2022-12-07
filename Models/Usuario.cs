@@ -23,5 +23,13 @@ namespace Nyxellnt.Models
             this.password = password;
             this.eventosComprados = new List<Operacion>();
         }
+
+        public void listarInformacionUsuario(){
+            Console.WriteLine("Id: "+idUsuario);
+            Console.WriteLine("Nombre: "+nombre);
+            Console.WriteLine("Apellido: "+apellido);
+            Console.WriteLine("Email: "+email);
+            Console.WriteLine("Contraseña: *********");
+        }
     }
 }
