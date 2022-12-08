@@ -405,7 +405,7 @@ namespace Nyxellnt
                                 .WriteAllText("./Models/Json/evento.json",
                                 jsonStringEventos);
 
-                            AnsiConsole.MarkupLine("Entrada comprada");
+                            AnsiConsole.MarkupLine("[bold green]Entrada comprada[/]");
                         }
                     }
                     else if (user == null)

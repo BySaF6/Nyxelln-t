@@ -25,7 +25,7 @@ namespace Nyxellnt.Models
 
         public void mostrarOperacion()
         {
-            AnsiConsole.MarkupLine("[bold #13D7F6]Compra número: [/]"+idOperacion);
+            AnsiConsole.MarkupLine("[bold #13D7F6]Id de la operación: [/]"+idOperacion);
             AnsiConsole.MarkupLine("[bold #13D7F6]Nombre: [/]" + eventoComprado.nombre);
             AnsiConsole.MarkupLine("[bold #13D7F6]Cantante: [/]" + eventoComprado.cantante);
             AnsiConsole.MarkupLine("[bold #13D7F6]Localidad: [/]" + eventoComprado.localidad);

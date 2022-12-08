@@ -1,2 +1,2 @@
 Exception: Menu Usuario System.NullReferenceException: Object reference not set to an instance of an object.
-   at Nyxellnt.Program.menuUsuario() in C:\Users\samar\OneDrive\Documentos\1_Proyectos\Clase\Servidor\Nyxelln-t\Program.cs:line 214
+   at Nyxellnt.Program.menuUsuario() in C:\Users\samar\OneDrive\Documentos\1_Proyectos\Clase\Servidor\Nyxelln-t\Program.cs:line 213

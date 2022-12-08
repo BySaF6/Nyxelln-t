@@ -7,7 +7,7 @@
     "password": "Admin",
     "eventosComprados": [
       {
-        "idOperacion": 2,
+        "idOperacion": 1,
         "eventoComprado": {
           "idEvento": 2,
           "nombre": "20 A\u00F1os de L\u00E1grimas Negras",
@@ -25,35 +25,19 @@
       {
         "idOperacion": 2,
         "eventoComprado": {
-          "idEvento": 6,
-          "nombre": "Sanz en Vivo",
-          "cantante": "Alejandro Sanz",
-          "descripcion": "Alejandro Sanz regresa a Espa\u00F1a con su gira SANZ EN VIVO 2023 tras el rotundo \u00E9xito conseguido el pasado verano. En esta gira, adem\u00E1s de repasar los grandes \u00E9xitos de su carrera como \u201CCoraz\u00F3n Part\u00EDo\u201D, \u201CAmiga m\u00EDa\u201D o \u201CMi persona favorita\u201D, Alejandro Sanz interpretar\u00E1 algunos de los temas incluidos en su disco SANZ, su \u00FAltimo trabajo de estudio, nominado en la categor\u00EDa \u00C1lbum del a\u00F1o en los Latin GRAMMY 2022 y disco m\u00E1s vendido en unidades f\u00EDsicas del 2021 en Espa\u00F1a.",
+          "idEvento": 5,
+          "nombre": "Sesi\u00F3n de \u00D3pera",
+          "cantante": "Andrea Bocelli",
+          "descripcion": "Andrea Bocelli ofrecer\u00E1 un concierto en el WiZink Center de Madrid el pr\u00F3ximo 20 de septiembre de 2023. Ser\u00E1 su \u00FAnico concierto en Espa\u00F1a y contar\u00E1 con un repertorio y escenograf\u00EDa \u00FAnicos con colaboraci\u00F3n de invitados especiales.",
           "localidad": "Wizink Center de Madrid",
-          "fecha": "2023-6-29",
-          "precioEntrada": 53,
+          "fecha": "2023-9-20",
+          "precioEntrada": 45,
           "stock": 99,
-          "categoria": "Pop"
+          "categoria": "Opera"
         },
         "numEntradasCompradas": 1,
-        "precioTotal": 53
+        "precioTotal": 45
       }
     ]
-  },
-  {
-    "idUsuario": 2,
-    "nombre": "a",
-    "apellido": "a",
-    "email": "a",
-    "password": "a",
-    "eventosComprados": []
-  },
-  {
-    "idUsuario": 3,
-    "nombre": "b",
-    "apellido": "b",
-    "email": "b",
-    "password": "",
-    "eventosComprados": []
   }
 ]
