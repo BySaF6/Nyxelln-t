@@ -60,6 +60,13 @@ namespace Nyxellnt
             }
         }
 
+        public static void EscribirErrorLog(string msgerror)
+        {
+            Console.WriteLine("error:" + msgerror);
+            string fileName = "LogError.txt";
+            File.WriteAllText(fileName, msgerror);
+        }
+
         public static List<Evento> listaEventos = new List<Evento>();
 
         static Usuario user = null;
@@ -70,14 +77,8 @@ namespace Nyxellnt
         {
             try
             {
-                listaEventos =
-                    JsonConvert
-                        .DeserializeObject<List<Evento>>(File
-                            .ReadAllText("./Models/Json/evento.json"));
-                usuarios =
-                    JsonConvert
-                        .DeserializeObject<List<Usuario>>(File
-                            .ReadAllText("./Models/Json/usuarios.json"));
+                listaEventos = JsonConvert.DeserializeObject<List<Evento>>(File.ReadAllText("./Models/Json/evento.json"));
+                usuarios = JsonConvert.DeserializeObject<List<Usuario>>(File.ReadAllText("./Models/Json/usuarios.json"));
             }
             catch (Exception e)
             {
@@ -90,7 +91,7 @@ namespace Nyxellnt
         {
             try
             {
-                Convert.ToInt32 (cadena);
+                Convert.ToInt32(cadena);
                 return true;
             }
             catch (Exception nfe)
@@ -152,7 +153,7 @@ namespace Nyxellnt
                 user = new Usuario(nombre, apellido, email, password);
 
                 //Serializar listaUsuarios
-                usuarios.Add (user);
+                usuarios.Add(user);
                 string fileName = "./Models/Json/usuarios.json";
                 var options =
                     new JsonSerializerOptions { WriteIndented = true };
@@ -162,7 +163,7 @@ namespace Nyxellnt
                         .Json
                         .JsonSerializer
                         .Serialize(usuarios, options);
-                File.WriteAllText (fileName, jsonString);
+                File.WriteAllText(fileName, jsonString);
             }
             catch (Exception e)
             {
@@ -260,8 +261,7 @@ namespace Nyxellnt
             }
             catch (Exception e)
             {
-                EscribirErrorLog("Exception: Listar información Usuario " +
-                e.ToString());
+                EscribirErrorLog("Exception: Listar información Usuario " + e.ToString());
             }
         }
 
@@ -293,7 +293,7 @@ namespace Nyxellnt
                         {
                             if (e.idEvento.Equals(opcion))
                             {
-                                verEventoExtendido (e);
+                                verEventoExtendido(e);
                             }
                         });
                 }
@@ -313,7 +313,7 @@ namespace Nyxellnt
                 Console.WriteLine("Opciones disponibles: pop, rock, perreo");
                 Console.WriteLine("Introduzca género:");
                 string stringBusqueda = Console.ReadLine();
-                verEventosBuscados (stringBusqueda);
+                verEventosBuscados(stringBusqueda);
             }
             catch (Exception e)
             {
@@ -328,7 +328,7 @@ namespace Nyxellnt
                 int opcion = 1;
                 while (opcion != 0)
                 {
-                    Console.WriteLine("-------------- Nyxelln't - Eventos de " +stringBusqueda +" --------------");
+                    Console.WriteLine("-------------- Nyxelln't - Eventos de " + stringBusqueda + " --------------");
                     listaEventos.ForEach(e =>
                         {
                             if (e.categoria.Equals(stringBusqueda))
@@ -342,7 +342,7 @@ namespace Nyxellnt
                         {
                             if (e.idEvento.Equals(opcion))
                             {
-                                verEventoExtendido (e);
+                                verEventoExtendido(e);
                             }
                         });
                 }
@@ -356,7 +356,8 @@ namespace Nyxellnt
 
         public static void verEventoExtendido(Evento evento)
         {
-            try{
+            try
+            {
                 int opcion = 0;
                 while (opcion != 2)
                 {
@@ -384,7 +385,7 @@ namespace Nyxellnt
                         {
                             evento.stock -= entradas;
                             Operacion operacion = new Operacion(evento, entradas);
-                            user.eventosComprados.Add (operacion);
+                            user.eventosComprados.Add(operacion);
 
                             var options =
                                 new JsonSerializerOptions { WriteIndented = true };
@@ -426,7 +427,8 @@ namespace Nyxellnt
 
         public static void misCompras()
         {
-            try{
+            try
+            {
                 int opcion = 0;
                 while (opcion != 1)
                 {
