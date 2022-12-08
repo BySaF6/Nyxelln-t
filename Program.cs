@@ -6,6 +6,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using Newtonsoft.Json;
 using Nyxellnt.Models;
+using Spectre.Console;
 
 namespace Nyxellnt
 {
@@ -19,12 +20,12 @@ namespace Nyxellnt
                 int opcion1 = 0;
                 while (opcion1 != 4)
                 {
-                    Console.WriteLine("-------------- Nyxelln't --------------");
-                    Console.WriteLine("1. Iniciar sesión");
-                    Console.WriteLine("2. Registrarse");
-                    Console.WriteLine("3. Ver Eventos");
-                    Console.WriteLine("4. Salir");
-                    Console.WriteLine("----------------------------------");
+                    AnsiConsole.MarkupLine("[bold #FD0105]--------------[/] [bold #FD0105]Nyxelln't[/] [bold #FD0105]--------------[/]");
+                    AnsiConsole.MarkupLine("[bold #FAFA29]1. Iniciar sesión[/]");
+                    AnsiConsole.MarkupLine("[bold #FAFA29]2. Registrarse[/]");
+                    AnsiConsole.MarkupLine("[bold #FAFA29]3. Ver Eventos[/]");
+                    AnsiConsole.MarkupLine("[bold #FAFA29]4. Salir[/]");
+                    AnsiConsole.MarkupLine("[bold #FD0105]---------------------------------------[/]");
                     opcion1 = pedirOpcion();
                     switch (opcion1)
                     {
@@ -40,7 +41,7 @@ namespace Nyxellnt
                             verEventos();
                             break;
                         case 4:
-                            Console.WriteLine("Hasta el huevo, vuelve pronto");
+                            AnsiConsole.MarkupLine("Hasta el huevo, vuelve pronto");
                             break;
                     }
                 }
@@ -52,17 +53,17 @@ namespace Nyxellnt
             }
             catch (InvalidOperationException e)
             {
-                Console.WriteLine("InvalidOperationException: " + e.ToString());
+                AnsiConsole.MarkupLine("InvalidOperationException: " + e.ToString());
             }
             catch (Exception e)
             {
-                Console.WriteLine("Exception: " + e.ToString());
+                AnsiConsole.MarkupLine("Exception: " + e.ToString());
             }
         }
 
         public static void EscribirErrorLog(string msgerror)
         {
-            Console.WriteLine("error:" + msgerror);
+            AnsiConsole.MarkupLine("error:" + msgerror);
             string fileName = "LogError.txt";
             File.WriteAllText(fileName, msgerror);
         }
@@ -121,11 +122,11 @@ namespace Nyxellnt
         {
             try
             {
-                Console.WriteLine("Nombre: ");
+                AnsiConsole.MarkupLine("Nombre: ");
                 String nombre = Console.ReadLine();
-                Console.WriteLine("Apellido: ");
+                AnsiConsole.MarkupLine("Apellido: ");
                 String apellido = Console.ReadLine();
-                Console.WriteLine("Email: ");
+                AnsiConsole.MarkupLine("Email: ");
 
                 // comprobar que no haya otro email igual
                 Boolean usuarioRepetido = false;
@@ -147,9 +148,9 @@ namespace Nyxellnt
                 }
                 while (usuarioRepetido == true);
 
-                Console.WriteLine("Constraseña: ");
+                AnsiConsole.MarkupLine("Constraseña: ");
                 String password = Console.ReadLine();
-                Console.WriteLine("Cuenta creada con exito.");
+                AnsiConsole.MarkupLine("Cuenta creada con exito.");
                 user = new Usuario(nombre, apellido, email, password);
 
                 //Serializar listaUsuarios
@@ -175,9 +176,9 @@ namespace Nyxellnt
         {
             try
             {
-                Console.WriteLine("Email: ");
+                AnsiConsole.MarkupLine("Email: ");
                 String email = Console.ReadLine();
-                Console.WriteLine("Constraseña: ");
+                AnsiConsole.MarkupLine("Constraseña: ");
                 String password = Console.ReadLine();
 
                 usuarios
@@ -189,12 +190,12 @@ namespace Nyxellnt
                         )
                         {
                             user = usuario;
-                            Console.WriteLine("Sesión iniciada con éxito");
+                            AnsiConsole.MarkupLine("Sesión iniciada con éxito");
                         }
                     });
                 if (user == null)
                 {
-                    Console.WriteLine("No estas registrado");
+                    AnsiConsole.MarkupLine("No estas registrado");
                 }
             }
             catch (Exception e)
@@ -214,11 +215,11 @@ namespace Nyxellnt
                         .WriteLine("-------------- Nyxelln't - " +
                         user.nombre +
                         " --------------");
-                    Console.WriteLine("1. Ver Eventos");
-                    Console.WriteLine("2. Información personal");
-                    Console.WriteLine("3. Mis Compras");
-                    Console.WriteLine("4. Cerrar sesión");
-                    Console.WriteLine("----------------------------------");
+                    AnsiConsole.MarkupLine("1. Ver Eventos");
+                    AnsiConsole.MarkupLine("2. Información personal");
+                    AnsiConsole.MarkupLine("3. Mis Compras");
+                    AnsiConsole.MarkupLine("4. Cerrar sesión");
+                    AnsiConsole.MarkupLine("----------------------------------");
                     opcion = pedirOpcion();
                     switch (opcion)
                     {
@@ -232,7 +233,7 @@ namespace Nyxellnt
                             misCompras();
                             break;
                         case 4:
-                            Console.WriteLine("Tira coo!");
+                            AnsiConsole.MarkupLine("Tira coo!");
                             user = null;
                             break;
                     }
@@ -254,8 +255,8 @@ namespace Nyxellnt
                     Console
                         .WriteLine("-------------- Nyxelln't - Mi Cuenta --------------");
                     user.listarInformacionUsuario();
-                    Console.WriteLine("1. Volver");
-                    Console.WriteLine("----------------------------------");
+                    AnsiConsole.MarkupLine("1. Volver");
+                    AnsiConsole.MarkupLine("----------------------------------");
                     opcion = pedirOpcion();
                 }
             }
@@ -274,14 +275,14 @@ namespace Nyxellnt
                 {
                     Console
                         .WriteLine("-------------- Nyxelln't - Ver Eventos --------------");
-                    Console.WriteLine("0. Buscar por género musical");
+                    AnsiConsole.MarkupLine("0. Buscar por género musical");
                     listaEventos
                         .ForEach(e =>
                         {
                             e.listarEventoLinea();
                         });
-                    Console.WriteLine(listaEventos.Count + 1 + ". Volver");
-                    Console.WriteLine("----------------------------------");
+                    AnsiConsole.MarkupLine(listaEventos.Count + 1 + ". Volver");
+                    AnsiConsole.MarkupLine("----------------------------------");
                     opcion = pedirOpcion();
 
                     if (opcion == 0)
@@ -310,8 +311,8 @@ namespace Nyxellnt
             {
                 Console
                     .WriteLine("-------------- Nyxelln't - Buscador de Eventos --------------");
-                Console.WriteLine("Opciones disponibles: Rock, Flamenco, Pop, Ópera, Musical, Jazz");
-                Console.WriteLine("Introduzca género:");
+                AnsiConsole.MarkupLine("Opciones disponibles: Rock, Flamenco, Pop, Ópera, Musical, Jazz");
+                AnsiConsole.MarkupLine("Introduzca género:");
                 string stringBusqueda = Console.ReadLine();
                 verEventosBuscados(stringBusqueda);
             }
@@ -328,7 +329,7 @@ namespace Nyxellnt
                 int opcion = 1;
                 while (opcion != 0)
                 {
-                    Console.WriteLine("-------------- Nyxelln't - Eventos de " + stringBusqueda + " --------------");
+                    AnsiConsole.MarkupLine("-------------- Nyxelln't - Eventos de " + stringBusqueda + " --------------");
                     listaEventos.ForEach(e =>
                         {
                             if (e.categoria.ToLower().Equals(stringBusqueda.ToLower()))
@@ -336,7 +337,7 @@ namespace Nyxellnt
                                 e.listarEventoLinea();
                             }
                         });
-                    Console.WriteLine("0. Volver");
+                    AnsiConsole.MarkupLine("0. Volver");
                     opcion = pedirOpcion();
                     listaEventos.ForEach(e =>
                         {
@@ -361,16 +362,16 @@ namespace Nyxellnt
                 int opcion = 0;
                 while (opcion != 2)
                 {
-                    Console.WriteLine("-------------- Nyxelln't - Ver Eventos --------------");
+                    AnsiConsole.MarkupLine("-------------- Nyxelln't - Ver Eventos --------------");
                     evento.listarEventoExtendido();
-                    Console.WriteLine("----------------------------------");
-                    Console.WriteLine("1. Comprar");
-                    Console.WriteLine("2. Volver");
-                    Console.WriteLine("----------------------------------");
+                    AnsiConsole.MarkupLine("----------------------------------");
+                    AnsiConsole.MarkupLine("1. Comprar");
+                    AnsiConsole.MarkupLine("2. Volver");
+                    AnsiConsole.MarkupLine("----------------------------------");
                     opcion = pedirOpcion();
                     if (opcion.Equals(1) && user != null)
                     {
-                        Console.WriteLine("¿Cuantas entradas quieres?: ");
+                        AnsiConsole.MarkupLine("¿Cuantas entradas quieres?: ");
                         int entradas = pedirOpcion();
                         if (entradas < 1)
                         {
@@ -379,7 +380,7 @@ namespace Nyxellnt
                         }
                         else if (entradas > evento.stock)
                         {
-                            Console.WriteLine("¡Onde vas macarenooo! Compra alguna menos, que tas pasao");
+                            AnsiConsole.MarkupLine("¡Onde vas macarenooo! Compra alguna menos, que tas pasao");
                         }
                         else
                         {
@@ -408,7 +409,7 @@ namespace Nyxellnt
                                 .WriteAllText("./Models/Json/evento.json",
                                 jsonStringEventos);
 
-                            Console.WriteLine("Entrada comprada");
+                            AnsiConsole.MarkupLine("Entrada comprada");
                         }
                     }
                     else if (user == null)
@@ -440,8 +441,8 @@ namespace Nyxellnt
                         {
                             e.mostrarOperacion();
                         });
-                    Console.WriteLine("1. Volver");
-                    Console.WriteLine("----------------------------------");
+                    AnsiConsole.MarkupLine("1. Volver");
+                    AnsiConsole.MarkupLine("----------------------------------");
                     opcion = pedirOpcion();
                 }
             }
