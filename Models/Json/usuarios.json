@@ -21,7 +21,39 @@
         },
         "numEntradasCompradas": 2,
         "precioTotal": 120
+      },
+      {
+        "idOperacion": 2,
+        "eventoComprado": {
+          "idEvento": 6,
+          "nombre": "Sanz en Vivo",
+          "cantante": "Alejandro Sanz",
+          "descripcion": "Alejandro Sanz regresa a Espa\u00F1a con su gira SANZ EN VIVO 2023 tras el rotundo \u00E9xito conseguido el pasado verano. En esta gira, adem\u00E1s de repasar los grandes \u00E9xitos de su carrera como \u201CCoraz\u00F3n Part\u00EDo\u201D, \u201CAmiga m\u00EDa\u201D o \u201CMi persona favorita\u201D, Alejandro Sanz interpretar\u00E1 algunos de los temas incluidos en su disco SANZ, su \u00FAltimo trabajo de estudio, nominado en la categor\u00EDa \u00C1lbum del a\u00F1o en los Latin GRAMMY 2022 y disco m\u00E1s vendido en unidades f\u00EDsicas del 2021 en Espa\u00F1a.",
+          "localidad": "Wizink Center de Madrid",
+          "fecha": "2023-6-29",
+          "precioEntrada": 53,
+          "stock": 99,
+          "categoria": "Pop"
+        },
+        "numEntradasCompradas": 1,
+        "precioTotal": 53
       }
     ]
+  },
+  {
+    "idUsuario": 2,
+    "nombre": "a",
+    "apellido": "a",
+    "email": "a",
+    "password": "a",
+    "eventosComprados": []
+  },
+  {
+    "idUsuario": 3,
+    "nombre": "b",
+    "apellido": "b",
+    "email": "b",
+    "password": "",
+    "eventosComprados": []
   }
 ]
