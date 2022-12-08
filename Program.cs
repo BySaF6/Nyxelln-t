@@ -310,7 +310,7 @@ namespace Nyxellnt
             {
                 Console
                     .WriteLine("-------------- Nyxelln't - Buscador de Eventos --------------");
-                Console.WriteLine("Opciones disponibles: pop, rock, perreo");
+                Console.WriteLine("Opciones disponibles: Rock, Flamenco, Pop, Ópera, Musical, Jazz");
                 Console.WriteLine("Introduzca género:");
                 string stringBusqueda = Console.ReadLine();
                 verEventosBuscados(stringBusqueda);
@@ -331,7 +331,7 @@ namespace Nyxellnt
                     Console.WriteLine("-------------- Nyxelln't - Eventos de " + stringBusqueda + " --------------");
                     listaEventos.ForEach(e =>
                         {
-                            if (e.categoria.Equals(stringBusqueda))
+                            if (e.categoria.ToLower().Equals(stringBusqueda.ToLower()))
                             {
                                 e.listarEventoLinea();
                             }

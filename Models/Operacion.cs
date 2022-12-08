@@ -9,7 +9,7 @@ namespace Nyxellnt.Models
         public Evento eventoComprado {get;set;}
         public int numEntradasCompradas {get;set;}
         public decimal precioTotal {get;set;}
-        public DateTime fechaCompra {get;set;}
+        public string fechaCompra = DateTime.Now.ToString("dd-MM-yyyy");
 
         //Constructor
         public Operacion(Evento eventoComprado, int numEntradasCompradas)
@@ -19,11 +19,11 @@ namespace Nyxellnt.Models
             this.eventoComprado = eventoComprado;
             this.numEntradasCompradas = numEntradasCompradas;
             this.precioTotal = numEntradasCompradas * eventoComprado.precioEntrada;
-            //this.fechaCompra = new DateTime.Now();
+            this.fechaCompra = fechaCompra;
         }
 
         public void mostrarOperacion(){
-            Console.WriteLine(eventoComprado.nombre+" "+eventoComprado.cantante+" "+eventoComprado.localidad+" "+eventoComprado.categoria+" "+eventoComprado.fecha+" "+numEntradasCompradas+" "+precioTotal+" "+fechaCompra);
+            Console.WriteLine("Nombre: "+eventoComprado.nombre+", Cantante: "+eventoComprado.cantante+", Localidad: "+eventoComprado.localidad+", Categoría: "+eventoComprado.categoria+", Fecha: "+eventoComprado.fecha+", Entradas compradas: "+numEntradasCompradas+", Precio total: "+precioTotal+", Fecha de compra: "+fechaCompra);
         }
     }
 }

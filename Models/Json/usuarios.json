@@ -1,232 +1,27 @@
 [
   {
     "idUsuario": 1,
-    "nombre": "asd",
-    "apellido": "asd",
-    "email": "asd",
-    "password": "asd",
+    "nombre": "Admin",
+    "apellido": "Admin",
+    "email": "Admin",
+    "password": "Admin",
     "eventosComprados": [
       {
-        "idOperacion": 1,
-        "eventoComprado": {
-          "idEvento": 1,
-          "nombre": "evento_1",
-          "cantante": "juanito",
-          "descripcion": "loremimpsundolorjahdskjfhsak",
-          "localidad": "zaragoza",
-          "fecha": "2022-12-25",
-          "precioEntrada": 50,
-          "stock": 86,
-          "categoria": "rock"
-        },
-        "numEntradasCompradas": 4,
-        "precioTotal": 200,
-        "fechaCompra": "0001-01-01T00:00:00"
-      },
-      {
-        "idOperacion": 1,
-        "eventoComprado": {
-          "idEvento": 1,
-          "nombre": "evento_1",
-          "cantante": "juanito",
-          "descripcion": "loremimpsundolorjahdskjfhsak",
-          "localidad": "zaragoza",
-          "fecha": "2022-12-25",
-          "precioEntrada": 50,
-          "stock": 86,
-          "categoria": "rock"
-        },
-        "numEntradasCompradas": 4,
-        "precioTotal": 200,
-        "fechaCompra": "0001-01-01T00:00:00"
-      },
-      {
-        "idOperacion": 7,
-        "eventoComprado": {
-          "idEvento": 1,
-          "nombre": "evento_1",
-          "cantante": "juanito",
-          "descripcion": "loremimpsundolorjahdskjfhsak",
-          "localidad": "zaragoza",
-          "fecha": "2022-12-25",
-          "precioEntrada": 50,
-          "stock": 64,
-          "categoria": "rock"
-        },
-        "numEntradasCompradas": 1,
-        "precioTotal": 50,
-        "fechaCompra": "0001-01-01T00:00:00"
-      },
-      {
-        "idOperacion": 8,
-        "eventoComprado": {
-          "idEvento": 1,
-          "nombre": "evento_1",
-          "cantante": "juanito",
-          "descripcion": "loremimpsundolorjahdskjfhsak",
-          "localidad": "zaragoza",
-          "fecha": "2022-12-25",
-          "precioEntrada": 50,
-          "stock": 63,
-          "categoria": "rock"
-        },
-        "numEntradasCompradas": 1,
-        "precioTotal": 50,
-        "fechaCompra": "0001-01-01T00:00:00"
-      }
-    ]
-  },
-  {
-    "idUsuario": 2,
-    "nombre": "qwe",
-    "apellido": "qwe",
-    "email": "qwe",
-    "password": "qwe",
-    "eventosComprados": [
-      {
-        "idOperacion": 3,
-        "eventoComprado": {
-          "idEvento": 1,
-          "nombre": "evento_1",
-          "cantante": "juanito",
-          "descripcion": "loremimpsundolorjahdskjfhsak",
-          "localidad": "zaragoza",
-          "fecha": "2022-12-25",
-          "precioEntrada": 50,
-          "stock": 64,
-          "categoria": "rock"
-        },
-        "numEntradasCompradas": 6,
-        "precioTotal": 300,
-        "fechaCompra": "0001-01-01T00:00:00"
-      },
-      {
-        "idOperacion": 4,
-        "eventoComprado": {
-          "idEvento": 1,
-          "nombre": "evento_1",
-          "cantante": "juanito",
-          "descripcion": "loremimpsundolorjahdskjfhsak",
-          "localidad": "zaragoza",
-          "fecha": "2022-12-25",
-          "precioEntrada": 50,
-          "stock": 64,
-          "categoria": "rock"
-        },
-        "numEntradasCompradas": 10,
-        "precioTotal": 500,
-        "fechaCompra": "0001-01-01T00:00:00"
-      }
-    ]
-  },
-  {
-    "idUsuario": 3,
-    "nombre": "zxc",
-    "apellido": "zxc",
-    "email": "zxc",
-    "password": "zxc",
-    "eventosComprados": []
-  },
-  {
-    "idUsuario": 4,
-    "nombre": "rty",
-    "apellido": "rty",
-    "email": "rty",
-    "password": "rty",
-    "eventosComprados": [
-      {
-        "idOperacion": 5,
-        "eventoComprado": {
-          "idEvento": 1,
-          "nombre": "evento_1",
-          "cantante": "juanito",
-          "descripcion": "loremimpsundolorjahdskjfhsak",
-          "localidad": "zaragoza",
-          "fecha": "2022-12-25",
-          "precioEntrada": 50,
-          "stock": 64,
-          "categoria": "rock"
-        },
-        "numEntradasCompradas": 5,
-        "precioTotal": 250,
-        "fechaCompra": "0001-01-01T00:00:00"
-      },
-      {
-        "idOperacion": 6,
-        "eventoComprado": {
-          "idEvento": 4,
-          "nombre": "evento_4",
-          "cantante": "to\u00F1o",
-          "descripcion": "loremimpsundolorjahdskjfhsak",
-          "localidad": "pamplona",
-          "fecha": "2022-12-25",
-          "precioEntrada": 50,
-          "stock": 99,
-          "categoria": "perreo"
-        },
-        "numEntradasCompradas": 1,
-        "precioTotal": 50,
-        "fechaCompra": "0001-01-01T00:00:00"
-      }
-    ]
-  },
-  {
-    "idUsuario": 5,
-    "nombre": "qqq",
-    "apellido": "qqq",
-    "email": "qqq",
-    "password": "qqq",
-    "eventosComprados": []
-  },
-  {
-    "idUsuario": 6,
-    "nombre": "w",
-    "apellido": "w",
-    "email": "w",
-    "password": "w",
-    "eventosComprados": [
-      {
-        "idOperacion": 9,
+        "idOperacion": 2,
         "eventoComprado": {
           "idEvento": 2,
-          "nombre": "evento_2",
-          "cantante": "pepe",
-          "descripcion": "loremimpsundolorjahdskjfhsak",
-          "localidad": "madrid",
-          "fecha": "2022-12-25",
-          "precioEntrada": 50,
-          "stock": 99,
-          "categoria": "pop"
+          "nombre": "20 A\u00F1os de L\u00E1grimas Negras",
+          "cantante": "Diego el Cigala",
+          "descripcion": "Diego El Cigala, celebrar\u00E1 el vig\u00E9simo aniversario de su disco que grab\u00F3 junto al pianista cubano Bebo Vald\u00E9s. Un \u00E1lbum que ha vendido m\u00E1s de dos millones de copias y que ha contado con la colaboraci\u00F3n de artistas de la talla de Alicia Keys, Alejandro Fern\u00E1ndez, Chavela Vargas, Ricky Mart\u00EDn y Lila Downs entre muchos otros. Esta gira aniversario comienza el 13 de octubre en Dallas (Texas) y le llevar\u00E1 a recorrer 10 ciudades de Estados Unidos, para posteriormente aterrizar en Espa\u00F1a.",
+          "localidad": "Madrid",
+          "fecha": "2022-12-19",
+          "precioEntrada": 60,
+          "stock": 98,
+          "categoria": "Flamenco"
         },
-        "numEntradasCompradas": 1,
-        "precioTotal": 50,
-        "fechaCompra": "0001-01-01T00:00:00"
-      },
-      {
-        "idOperacion": 10,
-        "eventoComprado": {
-          "idEvento": 2,
-          "nombre": "evento_2",
-          "cantante": "pepe",
-          "descripcion": "loremimpsundolorjahdskjfhsak",
-          "localidad": "madrid",
-          "fecha": "2022-12-25",
-          "precioEntrada": 50,
-          "stock": 99,
-          "categoria": "pop"
-        },
-        "numEntradasCompradas": 0,
-        "precioTotal": 0,
-        "fechaCompra": "0001-01-01T00:00:00"
+        "numEntradasCompradas": 2,
+        "precioTotal": 120
       }
     ]
-  },
-  {
-    "idUsuario": 7,
-    "nombre": "a",
-    "apellido": "a",
-    "email": "a",
-    "password": "a",
-    "eventosComprados": []
   }
 ]

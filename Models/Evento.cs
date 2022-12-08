@@ -29,7 +29,7 @@ namespace Nyxellnt.Models
         }
 
         public void listarEventoLinea(){
-            Console.WriteLine(idEvento+". "+nombre + " " + cantante + " "+localidad+" "+categoria+" "+precioEntrada);
+            Console.WriteLine(idEvento+". Nombre: "+nombre + ", Cantante: " + cantante + ", Localidad: "+localidad+", Categoría: "+categoria+", Precio: "+precioEntrada+" euros");
         }
 
         public void listarEventoExtendido(){
