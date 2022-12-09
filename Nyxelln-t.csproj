@@ -13,4 +13,9 @@
     <PackageReference Include="Spectre.Console" Version="0.45.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Include="Json\**">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 </Project>

@@ -25,15 +25,15 @@ namespace Nyxellnt.Models
 
         public void mostrarOperacion()
         {
-            AnsiConsole.MarkupLine("[bold #13D7F6]Id de la operación: [/]"+idOperacion);
-            AnsiConsole.MarkupLine("[bold #13D7F6]Nombre: [/]" + eventoComprado.nombre);
-            AnsiConsole.MarkupLine("[bold #13D7F6]Cantante: [/]" + eventoComprado.cantante);
-            AnsiConsole.MarkupLine("[bold #13D7F6]Localidad: [/]" + eventoComprado.localidad);
-            AnsiConsole.MarkupLine("[bold #13D7F6]Categoría: [/]" + eventoComprado.categoria);
-            AnsiConsole.MarkupLine("[bold #13D7F6]Fecha: [/]" + eventoComprado.fecha);
-            AnsiConsole.MarkupLine("[bold #13D7F6]Entradas compradas: [/]" + numEntradasCompradas);
-            AnsiConsole.MarkupLine("[bold #13D7F6]Precio total: [/]" + precioTotal);
-            AnsiConsole.MarkupLine("[bold #13D7F6]Fecha de compra: [/]" + fechaCompra);
+            AnsiConsole.MarkupLine("[bold #13D7F6]Id de la operación: [/][bold white]"+idOperacion+"[/]");
+            AnsiConsole.MarkupLine("[bold #13D7F6]Nombre: [/][bold white]" + eventoComprado.nombre+"[/]");
+            AnsiConsole.MarkupLine("[bold #13D7F6]Cantante: [/][bold white]" + eventoComprado.cantante+"[/]");
+            AnsiConsole.MarkupLine("[bold #13D7F6]Localidad: [/][bold white]" + eventoComprado.localidad+"[/]");
+            AnsiConsole.MarkupLine("[bold #13D7F6]Categoría: [/][bold white]" + eventoComprado.categoria+"[/]");
+            AnsiConsole.MarkupLine("[bold #13D7F6]Fecha: [/][bold white]" + eventoComprado.fecha+"[/]");
+            AnsiConsole.MarkupLine("[bold #13D7F6]Entradas compradas: [/][bold white]" + numEntradasCompradas+"[/]");
+            AnsiConsole.MarkupLine("[bold #13D7F6]Precio total: [/][bold white]" + precioTotal+"[/]");
+            AnsiConsole.MarkupLine("[bold #13D7F6]Fecha de compra: [/][bold white]" + fechaCompra+"[/]");
             Console.WriteLine(" ");
         }
     }

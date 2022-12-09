@@ -210,7 +210,7 @@ namespace Nyxellnt
                 int opcion = 0;
                 while (opcion != 4)
                 {
-                    AnsiConsole.MarkupLine("[bold #27B2F8]------- Nyxelln't - [/]" + user.nombre + " [bold #27B2F8]--------[/]");
+                    AnsiConsole.MarkupLine("[bold #27B2F8]------- Nyxelln't - " + user.nombre + " --------[/]");
                     AnsiConsole.MarkupLine("[bold #13D7F6]1.[/] [bold white]Ver Eventos[/]");
                     AnsiConsole.MarkupLine("[bold #13D7F6]2.[/] [bold white]Información personal[/]");
                     AnsiConsole.MarkupLine("[bold #13D7F6]3.[/] [bold white]Mis Compras[/]");
@@ -275,7 +275,7 @@ namespace Nyxellnt
                         {
                             e.listarEventoLinea();
                         });
-                    AnsiConsole.MarkupLine(listaEventos.Count + 1 + ". [bold white]Volver[/]");
+                    AnsiConsole.MarkupLine("[bold #13D7F6]"+(listaEventos.Count + 1) + ".[/] [bold white]Volver[/]");
                     AnsiConsole.MarkupLine("[bold #27B2F8]-----------------------------------------------------------------------------------------------------------------------------------------------------------------[/]");
                     opcion = pedirOpcion();
 
@@ -324,7 +324,7 @@ namespace Nyxellnt
                 int opcion = 1;
                 while (opcion != 0)
                 {
-                    AnsiConsole.MarkupLine("[bold #27B2F8]---------------------------------------------------- Nyxelln't - Eventos de [/]" + stringBusqueda + " [bold #27B2F8]----------------------------------------------------[/]");
+                    AnsiConsole.MarkupLine("[bold #27B2F8]---------------------------------------------------- Nyxelln't - Eventos de " + stringBusqueda + " ----------------------------------------------------[/]");
                     listaEventos.ForEach(e =>
                         {
                             if (e.categoria.ToLower().Equals(stringBusqueda.ToLower()))

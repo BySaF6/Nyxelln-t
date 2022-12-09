@@ -1,2 +1,10 @@
-Exception: Menu Usuario System.NullReferenceException: Object reference not set to an instance of an object.
-   at Nyxellnt.Program.menuUsuario() in C:\Users\samar\OneDrive\Documentos\1_Proyectos\Clase\Servidor\Nyxelln-t\Program.cs:line 213
+Exception: Cargar Json Inicial System.IO.DirectoryNotFoundException: Could not find a part of the path 'D:\DAW_Pablo\Entorno Servidor\ProyectoFinal_1EV\Nyxelln-t\Models\Json\usuarios\usuarios.json'.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategy(FileStream fileStream, String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, Int64 preallocationSize)
+   at System.IO.StreamReader.ValidateArgsAndOpenPath(String path, Encoding encoding, Int32 bufferSize)
+   at System.IO.File.InternalReadAllText(String path, Encoding encoding)
+   at System.IO.File.ReadAllText(String path)
+   at Nyxellnt.Program.cargarJsonInicial() in D:\DAW_Pablo\Entorno Servidor\ProyectoFinal_1EV\Nyxelln-t\Program.cs:line 82

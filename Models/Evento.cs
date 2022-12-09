@@ -31,7 +31,7 @@ namespace Nyxellnt.Models
 
         public void listarEventoLinea()
         {
-            AnsiConsole.MarkupLine(idEvento + ". [bold #13D7F6]Nombre: [/]" + nombre + ", [bold #13D7F6]Cantante: [/]" + cantante + ", [bold #13D7F6]Localidad: [/]" + localidad + ", [bold #13D7F6]Categoría: [/]" + categoria + ", [bold #13D7F6]Precio: [/]" + precioEntrada + " euros");
+            AnsiConsole.MarkupLine("[bold #13D7F6]"+idEvento + ".[/] [bold #13D7F6]Nombre: [/][bold white]" + nombre + ",[/] [bold #13D7F6]Cantante: [/][bold white]" + cantante + ",[/] [bold #13D7F6]Localidad: [/][bold white]" + localidad + ",[/] [bold #13D7F6]Categoría: [/][bold white]" + categoria + ",[/] [bold #13D7F6]Precio: [/][bold white]" + precioEntrada + " euros[/]");
         }
 
         public void listarEventoExtendido()

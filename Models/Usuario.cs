@@ -27,11 +27,11 @@ namespace Nyxellnt.Models
 
         public void listarInformacionUsuario()
         {
-            AnsiConsole.MarkupLine("[bold #13D7F6]Id: [/]" + idUsuario);
-            AnsiConsole.MarkupLine("[bold #13D7F6]Nombre: [/]" + nombre);
-            AnsiConsole.MarkupLine("[bold #13D7F6]Apellido: [/]" + apellido);
-            AnsiConsole.MarkupLine("[bold #13D7F6]Email: [/]" + email);
-            AnsiConsole.MarkupLine("[bold #13D7F6]Contraseña: [/]*********");
+            AnsiConsole.MarkupLine("[bold #13D7F6]Id: [/][bold white]" + idUsuario+"[/]");
+            AnsiConsole.MarkupLine("[bold #13D7F6]Nombre: [/][bold white]" + nombre+"[/]");
+            AnsiConsole.MarkupLine("[bold #13D7F6]Apellido: [/][bold white]" + apellido+"[/]");
+            AnsiConsole.MarkupLine("[bold #13D7F6]Email: [/][bold white]" + email+"[/]");
+            AnsiConsole.MarkupLine("[bold #13D7F6]Contraseña: [/][bold white]*********[/]");
         }
     }
 }
