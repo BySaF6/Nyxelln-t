@@ -37,15 +37,15 @@ namespace Nyxellnt.Models
         public void listarEventoExtendido()
         {
 
-            AnsiConsole.MarkupLine("[bold #13D7F6]Evento: [/]" + nombre);
-            AnsiConsole.MarkupLine("[bold #13D7F6]Arista: [/]" + cantante);
+            AnsiConsole.MarkupLine("[bold #13D7F6]Evento: [/][bold white]" + nombre+"[/]");
+            AnsiConsole.MarkupLine("[bold #13D7F6]Arista: [/][bold white]" + cantante+"[/]");
             AnsiConsole.MarkupLine("[bold #13D7F6]\nDescripción:[/]");
-            AnsiConsole.MarkupLine(descripcion);
-            AnsiConsole.MarkupLine("[bold #13D7F6]\nLocalidad: [/]" + localidad);
-            AnsiConsole.MarkupLine("[bold #13D7F6]Estilo: [/]" + categoria);
-            AnsiConsole.MarkupLine("[bold #13D7F6]Fecha: [/]" + fecha);
-            AnsiConsole.MarkupLine("[bold #13D7F6]Precio: [/]" + precioEntrada + "euros");
-            AnsiConsole.MarkupLine("[bold #13D7F6]Entradas restantes: [/]" + stock);
+            AnsiConsole.MarkupLine("[bold white]"+descripcion+"[/]");
+            AnsiConsole.MarkupLine("[bold #13D7F6]\nLocalidad: [/][bold white]" + localidad+"[/]");
+            AnsiConsole.MarkupLine("[bold #13D7F6]Estilo: [/][bold white]" + categoria+"[/]");
+            AnsiConsole.MarkupLine("[bold #13D7F6]Fecha: [/][bold white]" + fecha+"[/]");
+            AnsiConsole.MarkupLine("[bold #13D7F6]Precio: [/][bold white]" + precioEntrada + " euros[/]");
+            AnsiConsole.MarkupLine("[bold #13D7F6]Entradas restantes: [/][bold white]" + stock+"[/]");
         }
     }
 }

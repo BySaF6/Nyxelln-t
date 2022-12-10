@@ -275,7 +275,7 @@ namespace Nyxellnt
                         {
                             e.listarEventoLinea();
                         });
-                    AnsiConsole.MarkupLine("[bold #13D7F6]"+(listaEventos.Count + 1) + ".[/] [bold white]Volver[/]");
+                    AnsiConsole.MarkupLine("[bold #13D7F6]" + (listaEventos.Count + 1) + ".[/] [bold white]Volver[/]");
                     AnsiConsole.MarkupLine("[bold #27B2F8]-----------------------------------------------------------------------------------------------------------------------------------------------------------------[/]");
                     opcion = pedirOpcion();
 
